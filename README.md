@@ -43,5 +43,5 @@ pep_%datetime%.csv
 Сводка по статусам сохраняется в файле с маской:
 
 ```
-status_summary_%datetime%.cs
+status_summary_%datetime%.csv
 ```
