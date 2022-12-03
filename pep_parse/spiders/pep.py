@@ -1,12 +1,13 @@
 import scrapy
 
+from pep_parse.settings import PEP_FQDN
 from pep_parse.items import PepParseItem
 
 
 class PepSpider(scrapy.Spider):
     name = 'pep'
-    allowed_domains = ['peps.python.org']
-    start_urls = ['https://peps.python.org/']
+    allowed_domains = [PEP_FQDN]
+    start_urls = [f'https://{PEP_FQDN}/']
 
     def parse(self, response):
         all_peps = response.css('section#numerical-index td a::attr(href)')
