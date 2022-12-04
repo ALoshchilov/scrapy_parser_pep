@@ -12,7 +12,8 @@ class PepParsePipeline:
         base_dir=BASE_DIR,
         results_rel_path=RESULTS_REL_PATH
     ):
-        (base_dir / results_rel_path).mkdir(exist_ok=True)
+        self.results_dir = base_dir / results_rel_path
+        self.results_dir.mkdir(exist_ok=True)
 
     def open_spider(self, spider):
         self.statuses = defaultdict(int)
