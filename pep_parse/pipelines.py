@@ -7,6 +7,13 @@ from pep_parse.settings import BASE_DIR, RESULTS_REL_PATH
 
 class PepParsePipeline:
 
+    def __init__(
+        self,
+        base_dir=BASE_DIR,
+        results_rel_path=RESULTS_REL_PATH
+    ):
+        (base_dir / results_rel_path).mkdir(exist_ok=True)
+
     def open_spider(self, spider):
         self.statuses = defaultdict(int)
 
